@@ -1,0 +1,19 @@
+--- origsrc/qsvn-0.8.2/src/CMakeLists.txt	2009-04-16 14:06:42.000000000 -0500
++++ src/qsvn-0.8.2/src/CMakeLists.txt	2009-07-08 18:42:44.838756200 -0500
+@@ -59,7 +59,6 @@ INCLUDE_DIRECTORIES(
+                      ${SUBVERSION_INCLUDE_DIR}
+ )
+ 
+-ADD_SUBDIRECTORY(svnqt)
+ 
+ SET(qsvn_headers
+          checkout.h
+@@ -164,7 +164,7 @@ ELSE (WIN32)
+ ENDIF (WIN32)
+ 
+ SET_TARGET_PROPERTIES(qsvn PROPERTIES LINK_FLAGS "${ALL_LINKFLAGS}")
+-TARGET_LINK_LIBRARIES(qsvn svnqt ${QT_LIBRARIES})
++TARGET_LINK_LIBRARIES(qsvn svnqt ${SUBVERSION_ALL_LIBS} ${QT_LIBRARIES})
+ 
+ IF (UNIX)
+     INSTALL(TARGETS qsvn
