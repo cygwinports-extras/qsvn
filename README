@@ -3,19 +3,20 @@ qsvn
 QSvn is a cross-platform graphical Subversion client.
 
 Runtime requirements:
-  cygwin-1.7.0-50
+  cygwin-1.7.0-60
+  libapr1-1.3.8-2
+  libaprutil1-1.3.9-2
   libgcc1-4.3.2-2
-  libQtCore4-4.5.1-1
-  libQtGui4-4.5.1-1
+  libQtCore4-4.5.2-1
+  libQtGui4-4.5.2-1
   libstdc++6-4.3.2-2
-  libsvnqt5-1.3.2-1
-  subversion-1.6.2-4
+  subversion-1.6.4-2
 
 Build requirements:
 (besides corresponding -devel packages)
   binutils-2.19.51-1
   cmake-2.6.4-10
-  cygport-0.9.8-1
+  cygport-0.9.9-1
   gcc4-core-4.3.2-2
   gcc4-g++-4.3.2-2
   make-3.81-2
@@ -29,15 +30,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack qsvn-0.8.2-X-src.tar.bz2
+  unpack qsvn-0.8.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./qsvn-0.8.2-X.cygport all
+  cygport ./qsvn-0.8.3-X.cygport all
 
 This will create:
-  /usr/src/qsvn-0.8.2-X-src.tar.bz2
-  /usr/src/qsvn-0.8.2-X.tar.bz2
+  /usr/src/qsvn-0.8.3-X-src.tar.bz2
+  /usr/src/qsvn-0.8.3-X.tar.bz2
 
 -------------------------------------------
 
@@ -52,6 +53,10 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.8.3-1 -----
+Version bump.
+Use built-in libsvnqt as it no longer builds against latest upstream version.
 
 ----- version 0.8.2-1 -----
 Initial release for Cygwin 1.7.

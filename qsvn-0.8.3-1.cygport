@@ -6,8 +6,11 @@ SRC_URI="http://www.anrichter.net/projects/qsvn/chrome/site/${P}-src.tar.gz"
 SRC_DIR="${P}/src"
 
 # build against kdesvn's copy of svnqt, since that is the original source
-PATCH_URI="0.8.2-system-libsvnqt.patch"
-DISTCLEANFILES="svnqt/*.hpp"
+#PATCH_URI="0.8.2-system-libsvnqt.patch"
+#DISTCLEANFILES="svnqt/*.hpp"
+
+# unfortunately 0.8.3 doesn't compile with kdesvn/libsvnqt 1.4.0
+PATCH_URI="0.8.3-noinst-libsvnqt.patch"
 
 CYGCMAKE_ARGS="-DHAVE_GCC_VISIBILITY=NO"
 
