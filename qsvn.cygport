@@ -1,16 +1,21 @@
 inherit qt4-cmake
 
-DESCRIPTION="Qt Subversion GUI"
+NAME="qsvn"
+VERSION=0.8.3
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Qt Subversion client"
+DESCRIPTION="QSvn is a cross-platform graphical Subversion client"
 HOMEPAGE="http://www.anrichter.net/projects/qsvn/"
-SRC_URI="http://www.anrichter.net/projects/qsvn/chrome/site/${P}-src.tar.gz"
-SRC_DIR="${P}/src"
+SRC_URI="http://www.anrichter.net/projects/qsvn/chrome/site/${NAME}-${VERSION}-src.tar.gz"
+SRC_DIR="${NAME}-${VERSION}/src"
 
 # build against kdesvn's copy of svnqt, since that is the original source
 #PATCH_URI="0.8.2-system-libsvnqt.patch"
 #DISTCLEANFILES="svnqt/*.hpp"
-
 # unfortunately 0.8.3 doesn't compile with kdesvn/libsvnqt 1.4.0
 PATCH_URI="0.8.3-noinst-libsvnqt.patch"
+PATCH_URI+=" 0.8.3-cmake28.patch"
 
 CYGCMAKE_ARGS="-DHAVE_GCC_VISIBILITY=NO"
 
